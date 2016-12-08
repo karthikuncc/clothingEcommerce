@@ -156,9 +156,7 @@ body
 
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
+	
 	<center>
 		<h1 id="myid">
 			Clothing Closet <br>
