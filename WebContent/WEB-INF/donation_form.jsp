@@ -153,7 +153,7 @@ body
 </style>
 
 <body>
-<%@include file="header.jsp"%>
+<%@include file="userLoginHeader.jsp"%>
 
 	<br>
 	<br>
@@ -212,7 +212,7 @@ body
         	<form:option value="XL"></form:option>	
         	</form:select>
        
-        <form:input path="quantity" required="true" placeholder="Qunatity*"/>
+        <form:input path="quantity" required="true" placeholder="Quantity*"/>
     
         <form:input path="color" required="true" placeholder="color"/>
 

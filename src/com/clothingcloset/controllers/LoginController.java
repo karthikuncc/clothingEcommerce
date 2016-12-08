@@ -90,6 +90,15 @@ public class LoginController {
 		
 		
 	}
-
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	   public ModelAndView userLogout() {
+		
+	      return new ModelAndView("userLoginPage", "command", new UserLogin());
+	   }
+	@RequestMapping(value="/home",method = RequestMethod.GET)
+	public String userHome(@ModelAttribute("SpringWeb") UserLogin userLogin){
+			return "donate_or_purchase";
+		
+	}
 		
 }

@@ -236,7 +236,7 @@ body
         	<option value="Shoe">Shoe<option>
                 </select></td>
       <td>    <input type="Price" name="Price" placeholder="Price*"></td>
-      <td><form:checkbox path="${listValue.itemName}" name="${listValue.itemName}" value="${listValue.itemName}"/></td>
+      <td><input type="checkbox" name=${listValue.itemName} value=${listValue.itemName}/></td>
     </tr>
 
   </c:forEach>

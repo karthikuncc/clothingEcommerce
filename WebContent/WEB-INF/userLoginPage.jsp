@@ -154,7 +154,7 @@ body
       
          <form:form method="POST" action="/ClothingCloset/login/validateUser">
          
-                    <legend><span class="number"></span> &nbsp;&nbsp; PBL Staff Login</legend>
+                    <legend><span class="number"></span> &nbsp;&nbsp; Customer Login</legend>
                     <form:input path="email" placeholder="Your Email/Userid *" />
                     
                  <form:input path="password" name="password" placeholder="password *" />
