@@ -164,7 +164,7 @@ body
 						src="https://pbs.twimg.com/profile_images/548811656386465795/F7ysD8pT.png"
 						alt="Donation!" width="150" height="150" border="0">
 				</a></td>&nbsp;&nbsp;&nbsp;&nbsp;
-				<td><a href="/ClothingCloset/itemdisplay/items"> 
+				<td><a href="/ClothingCloset/itemdisplay/userItems"> 
 				<img src="http://www.adsgsoftware.com/images/purchase.png"
 						alt="Purchase!" width="180" height="180" border="0">
 				</a></td>

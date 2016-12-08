@@ -33,7 +33,7 @@
 body
 {
     
-    background-image: url("http://wallpapercave.com/wp/o5kkKdN.jpg");
+    background-image: url("http://domnod.com/img/IT_EComm.jpg");
 }
 .form-style-5{
     max-width: 500px;
@@ -157,19 +157,6 @@ body
 
 	<%@include file="header.jsp"%>
 
-
-<%-- 	<c:if
-		test="${not empty lists}">
-
-		<ul>
-			<c:forEach var="listValue" items="${lists}">
-				<li>${listValue}</li>
-			</c:forEach>
-		</ul>
-
-	</c:if>
-	 --%>
-	 
 	
 	 
 	 
@@ -179,37 +166,39 @@ body
 	<br>
 	<br>
 	<section class="form-style-5"> 
-
-	<%-- <form:form action=""> --%>
+<!-- 	<section class="">  -->
 	
 		
-<table border = 1px align="center">
-<tr><th> Item Name </th> <th> Price</th> <th> Color </th> <th>Item Condition </th> <th>Brand </th></tr>
+<table width=100% height=100% border=2>
+<tr>
+<th> Item ID </th>
+<th> Item Name </th> 
+<th> Price</th> 
+<th> Color </th> 
+<th>Item Condition </th>
+ <th>Brand </th>
+ <th> Quantity </th>
+ </tr>
   <c:forEach items="${lists}" var="listValue">
     <tr>
-    <form:form method="post" action = "" commandName="user">
-    
-     <%--  <form:checkbox  path="item" value=" <c:out value="${listValue.itemId}" />"/> --%>
-     <%-- <td> <form:checkbox path="item" value = "${listValue.itemId}" /> --%>
-   <%--   <td><c:out value="${listValue.itemId}" /> </td>  --%>
-      <td><c:out value="${listValue.itemName}" /></td>
-      <td><c:out value="${listValue.price}" /></td>
-      <td><c:out value="${listValue.color}" /></td>
-      <td><c:out value="${listValue.itemCondition}" /></td>
-      <td><c:out value="${listValue.brand}" /></td>
-      <td align="center"><input type="submit" value="Buy"></td>
+    <form:form method="POST" action = "/ClothingCloset/itemdisplay/updateQuantity" >
+   		<td><form:input path = "itemId" value = "${listValue.itemId }" /></td>	
+      <td><form:input path = "itemName" value="${listValue.itemName}" /></td>
+      <td><form:input path="price" value="${listValue.price}" /></td>
+      <td><form:input path="color" value="${listValue.color}" /></td>
+      <td><form:input path="itemCondition" value="${listValue.itemCondition}" /></td>
+      <td><form:input path="brand" value="${listValue.brand}" /></td>
+      <td><form:input path = "quantity" value = "${listValue.quantity}" /></td>
+  <!--     <td align="center"><input type="submit" value="Buy"></td> -->
+      </form:form>
     </tr>
     
-    
-	</form:form>
+   
     
   </c:forEach>
 </table>
 
-<%-- <input type="submit" value="Proceed to Payment">
-		&nbsp;&nbsp;&nbsp;&nbsp; <span>Total Amount : $ </span>
 
-	</form:form> --%>
 	</section>
 </body>
 </html>

@@ -34,7 +34,8 @@
 body
 {
     
-    background-image: url("http://wallpapercave.com/wp/o5kkKdN.jpg");
+    /* background-image: url("http://wallpapercave.com/wp/o5kkKdN.jpg"); */
+        background-image: url("http://domnod.com/img/IT_EComm.jpg");
 }
 .form-style-5{
     max-width: 500px;
@@ -303,7 +304,7 @@ body
 						src="http://images.voonik.com/32423601/manvaa-multi-crepe-printed-unstitched-dress-materia-product.jpg?1475472234"
 						alt="no image" width="50" height="50" /></td>
 
-					<td><a href='displayAllItems?categoryName=DressMaterials'><span>Dress Materials</span></a></td>
+					<td><a href='displayAllItems?categoryName=Dress Materials'><span>Dress Materials</span></a></td>
 				</tr>
 				<tr>
 					<td><img

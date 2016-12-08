@@ -152,13 +152,13 @@ body {
 			<tr>
 				<form:form method="POST" action="/ClothingCloset/admin/removeStaff">
 
-					<td><form:input path="id" required="true"
+					<td align="center"><form:input path="id" required="true"
 							value="${listValue.id}" /></td>
-					<td><form:input path="email" required="true"
+					<td align="center"><form:input path="email" required="true"
 							value="${listValue.email}" /></td>
-					<td><form:input path="pblPosition" required="true"
+					<td align="center"><form:input path="pblPosition" required="true"
 							value="${listValue.pblPosition}" /></td>
-					<td><input type="submit" name="Remove" value="Remove" /></td>
+					<!-- <td><input type="submit" name="Remove" value="Remove" /></td> -->
 				</form:form>
 			</tr>
 

@@ -9,4 +9,5 @@ public interface ItemService {
 	public List<Item> retrieveAllItemsBasedOnCategory(String categoryName);
 	
 	public void updateQuantity(Integer itemId);
+	
 }

@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 import com.clothingcloset.api.PBLStaffService;
 import com.clothingcloset.handlers.PBLStaffServiceHandler;
 import com.clothingcloset.models.Donation;
+import com.clothingcloset.models.Item;
 import com.clothingcloset.models.PBLStaff;
+import com.clothingcloset.models.Purchases;
 
 @Component
 public class PBLStaffServiceImpl implements PBLStaffService {
@@ -48,6 +50,17 @@ public class PBLStaffServiceImpl implements PBLStaffService {
 	@Override
 	public boolean checkInItem(Donation donation) {
 		return pblStaffServiceHandler.checkInItems(donation);
+	}
+
+	@Override
+	public List<Purchases> displayAllPurchasedItems() {	
+		return pblStaffServiceHandler.showAllPurchasedItems();
+	}
+
+	@Override
+	public List<Item> displayAllItems() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

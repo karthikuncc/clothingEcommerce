@@ -1,7 +1,5 @@
 <%-- 
-    Document   : inside_categories
-    Created on : Nov 5, 2016, 10:36:35 AM
-    Author     : deepak
+    Author     : Chaitanya.
 --%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -11,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Staff Login</title>   
+        <title>User Login</title>   
 <style>
 
 #myid
@@ -157,7 +155,7 @@ body
                     <legend><span class="number"></span> &nbsp;&nbsp; Customer Login</legend>
                     <form:input path="email" placeholder="Your Email/Userid *" />
                     
-                 <form:input path="password" name="password" placeholder="password *" />
+                 <form:password path="password" name="password" placeholder="password *" />
                   <br><br>
                     
     			  <input type="submit" value = "Login" size=1 width="48" height="48" > 

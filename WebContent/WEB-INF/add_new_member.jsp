@@ -149,9 +149,6 @@ body {
 			<form:input path="lastName" required="true" placeholder="Last Name" />
 			<form:input path="email" required="true" placeholder="Your Email/Userid *" />
 			<form:password path="password" required="true" placeholder="Password" />
-			<form:password path="password" name="conPassword"
-				placeholder="Confirm password *" />
-
 			<form:select path="gender">
 				<form:option value="Male"></form:option>
 				<form:option value="Female"></form:option>

@@ -94,10 +94,25 @@ public class ItemServiceHandler {
 		try {
 			conn = (Connection) connectionUtil.connectToDatabase();
 			stmt = conn.createStatement();
-
-			String sql = "UPDATE ITEM_TABLE SET QUANTITY = QUANTITY-1 WHERE ITEM_ID ="+ itemId + ";";
-
+			String retrivalSql = "SELECT QUANTITY,PRICE FROM ITEM_TABLE WHERE ITEM_ID= "+itemId+";";
+			System.out.println(retrivalSql);
+			ResultSet resultSet = (ResultSet) stmt.executeQuery(retrivalSql);
+			int quantity = 1;
+			float price = 23;
+			while(resultSet.next()){
+				quantity = resultSet.getInt("QUANTITY");
+				price = resultSet.getFloat("PRICE");
+			}
+			quantity = quantity -1;
+			String sql = "UPDATE ITEM_TABLE SET QUANTITY ="+ quantity + " WHERE ITEM_ID ="+ itemId + ";";
+			System.out.println(sql);
 			stmt.executeUpdate(sql);
+			
+/*			String insertPurchases = "INSERT INTO PURCHASES (CUSTOMER_EMAIL,PURCHASE_DATE,COST) VALUES "
+					+"('lollachaitanya@yahoo.com'"+",'2016-12-09',"+price+");";
+			
+			System.out.println(insertPurchases);
+			stmt.executeUpdate(insertPurchases);*/
 			
 			
 		} catch (Exception e) {

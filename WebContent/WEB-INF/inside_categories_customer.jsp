@@ -33,7 +33,7 @@
 body
 {
     
-    background-image: url("http://4.bp.blogspot.com/-reSIBm3bspU/VRG4MsmdrhI/AAAAAAAAAiI/bsr8MSpjXuU/s1600/Thank-You-Photo-e1385010451105.jpg");
+    background-image: url("http://domnod.com/img/IT_EComm.jpg");
 }
 .form-style-5{
     max-width: 500px;
@@ -151,9 +151,55 @@ body
 
 </style>
 
-<body>
-<%@include file="header.jsp"%>
-<h1>Item donated successfully</h1>
 
+
+<body>
+
+	<%@include file="header.jsp"%>
+
+	
+	 
+	 
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<section class="form-style-5"> 
+<!-- 	<section class="">  -->
+	
+		
+<table width=100% height=100% border=2>
+<tr>
+<th> Item ID </th>
+<th> Item Name </th> 
+<th> Price</th> 
+<th> Color </th> 
+<th>Item Condition </th>
+ <th>Brand </th>
+ <th> Quantity </th>
+ <th> Buy </th>
+ </tr>
+  <c:forEach items="${lists}" var="listValue">
+    <tr>
+    <form:form method="POST" action = "/ClothingCloset/itemdisplay/updateQuantity" >
+   		<td><form:input path = "itemId" value = "${listValue.itemId }" /></td>	
+      <td><form:input path = "itemName" value="${listValue.itemName}" /></td>
+      <td><form:input path="price" value="${listValue.price}" /></td>
+      <td><form:input path="color" value="${listValue.color}" /></td>
+      <td><form:input path="itemCondition" value="${listValue.itemCondition}" /></td>
+      <td><form:input path="brand" value="${listValue.brand}" /></td>
+      <td><form:input path = "quantity" value = "${listValue.quantity}" /></td>
+      <td align="center"><input type="submit" value="Buy"></td>
+      </form:form>
+    </tr>
+    
+   
+    
+  </c:forEach>
+</table>
+
+
+	</section>
 </body>
 </html>

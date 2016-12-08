@@ -130,5 +130,7 @@ public class PBLStaffServiceController {
 		model.addAttribute("lists", donations);
 		return new ModelAndView("member_login", "command", new Donation());
 	}
+	
+
 		  
 }
