@@ -10,7 +10,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
+
 import com.clothingcloset.databaseconnections.ConnectionUtil;
+import com.clothingcloset.models.Donation;
+import com.clothingcloset.models.Item;
 import com.clothingcloset.models.PBLStaff;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -161,6 +165,58 @@ public class PBLStaffServiceHandler {
 		return staffMembers;
 
 	}
+	
+	public boolean checkInItems(Donation donation){
+		boolean isChecked = false;
+		try{
+			conn = (Connection) connectionUtil.connectToDatabase();
+			stmt = conn.createStatement();
+			
+			// Get the Donation ID Record from the database.
+			Integer id = donation.getId();
+			
+			String updateSql  = "UPDATE DONATION_TABLE SET CHECKED="+1+" WHERE DONATION_ID="+id;
+			System.out.println(updateSql);
+			stmt.executeUpdate(updateSql);
+			
+			String categoryIdSql = "SELECT CATEGORY_ID FROM CATEGORY_TABLE WHERE CATEGORY_NAME= '"+donation.getCategoryName()+"';";
+			System.out.println(categoryIdSql);
+			ResultSet results = stmt.executeQuery(categoryIdSql);
+			Integer categoryId = 1;
+			while(results.next()){
+				categoryId = results.getInt("CATEGORY_ID");
+			}
+			
+			String itemInsertSQl = "INSERT INTO ITEM_TABLE (ITEM_NAME,SIZE,COLOR,QUANTITY,ITEM_CONDITION,DESCRIPTION,ITEM_ADDED_DATE,GENDER,BRAND,PRICE,CATEGORY_ID)"
+			+" VALUES ('"+donation.getItemName()+"','"+donation.getSize()+"','"+donation.getColor()+"',"
+			+donation.getQuantity()+",'"+donation.getItem_Condition()+"','"+donation.getDescription()
+			+"','"+donation.getDateOfDonation()+"','"+donation.getGender()+"','"+donation.getBrand()+"',"+donation.getPrice()+","+categoryId+");";
+			
+			
+			System.out.println("SQL for Insert ITem: "+itemInsertSQl);
+			
+			stmt.executeUpdate(itemInsertSQl);
+			isChecked = true;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+			} catch (SQLException sqlException) {
+				sqlException.printStackTrace();
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				se.printStackTrace();
+			}
+		}
+		
+		return isChecked;
+	}
 
 	public Boolean removePBLStaffMembers(PBLStaff pblStaff) {
 	 
@@ -177,11 +233,19 @@ public class PBLStaffServiceHandler {
 			resultSet.next();
 			int	id = resultSet.getInt("ID");
 			
+			String sql2 = "delete FROM  CHECKEDIN WHERE PBLEMAIL = '"+pblStaff.getEmail()+"';";
+			
+			String sql1= "delete FROM PERSON_TABLE WHERE ID =" + id + ";";
+			String sql3 = "delete FROM PBLSTAFF_TABLE WHERE EMAIL ='" + pblStaff.getEmail() + "';";
+			//String sql2 = "delete from CHECKED"
 
-			String sql1 = "delete FROM PBLSTAFF_TABLE WHERE EMAIL ='" + pblStaff.getEmail() + "';";
-			String sql2 = "delete FROM PERSON_TABLE WHERE ID =" + id + ";";
-			stmt.executeUpdate(sql1);
+			System.out.println(sql1);
+			System.out.println(sql2);
+			System.out.println(sql3);
+			
 			stmt.executeUpdate(sql2);
+			stmt.executeUpdate(sql3);
+			stmt.executeUpdate(sql1);
 			
 			
 		} catch (Exception e) {

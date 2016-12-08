@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.clothingcloset.api.PBLStaffService;
 import com.clothingcloset.handlers.PBLStaffServiceHandler;
+import com.clothingcloset.models.Donation;
 import com.clothingcloset.models.PBLStaff;
 
 @Component
@@ -40,8 +41,13 @@ public class PBLStaffServiceImpl implements PBLStaffService {
 	public Boolean removePBLStaff(PBLStaff pblStaff)  {
 		Boolean flag=false;
 		flag= pblStaffServiceHandler.removePBLStaffMembers(pblStaff);
-	return flag;
+		return flag;
 		
+	}
+
+	@Override
+	public boolean checkInItem(Donation donation) {
+		return pblStaffServiceHandler.checkInItems(donation);
 	}
 	
 	

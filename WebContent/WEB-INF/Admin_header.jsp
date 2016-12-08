@@ -60,7 +60,7 @@ background-color:#1abc9c;
 <ul>
   <li><a href="/ClothingCloset/admin/showstaff">Home</a></li>
   <li><a href="/ClothingCloset/admin/add_new_member">Add member</a></li>
-  <li><a href="/ClothingCloset/admin/remove_member">Remove member</a></li>
+<!--   <li><a href="/ClothingCloset/admin/remove_member">Remove member</a></li> -->
   <li><a href="/ClothingCloset/admin/logout">Logout</a></li> 
 </ul>
     </body>

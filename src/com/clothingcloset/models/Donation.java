@@ -1,5 +1,7 @@
 package com.clothingcloset.models;
 
+import java.util.List;
+
 public class Donation {
 
 	private Integer id;
@@ -14,7 +16,27 @@ public class Donation {
 	private String description;
 	private String gender;
 	private String brand;
+	private String categoryName;
+	private float price;
 
+	private List<Donation> donations ;
+
+	public List<Donation> getDonations() {
+		return donations;
+	}
+
+	public void setDonations(List<Donation> donations) {
+		this.donations = donations;
+	}
+	
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -117,6 +139,14 @@ public class Donation {
 				+ ", itemName=" + itemName + ", size=" + size + ", quantity=" + quantity + ", color=" + color
 				+ ", item_Condition=" + item_Condition + ", description=" + description + ", gender=" + gender
 				+ ", brand=" + brand + "]";
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
 	}
 
 }

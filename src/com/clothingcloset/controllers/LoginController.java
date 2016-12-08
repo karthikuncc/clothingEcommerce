@@ -86,9 +86,7 @@ public class LoginController {
 			System.out.println("In valid User");
 			return new ModelAndView("userLoginPage", "command", new UserLogin());
 		}
-		
-		
-		
+
 	}
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	   public ModelAndView userLogout() {
