@@ -169,9 +169,9 @@ body
 		<br>
 	</center>
 	
-	
+	<section class="form-style-5">
 	<form:form method="POST" action="/ClothingCloset/donate/donateItem">
-   <table cellspacing="15px" align="center" font-size="205px">
+  
    <%--  <tr>
         <td><form:label path="email">Email</form:label></td>
         <td><form:input path="email" required="true" /></td>
@@ -180,9 +180,9 @@ body
         <td><form:label path="dateOfDonation">Date of Donation</form:label></td>
         <td><form:input path="dateOfDonation" required="true"/></td>
     </tr> --%>
-    <tr>
-          <td><form:label path="itemName">Item Name</form:label></td>
-        <td><form:select path="itemName">
+   
+        <form:label path="itemName">Item Name</form:label>
+        <form:select path="itemName" placeholder="Item Name">
         	<form:option value="Belt"></form:option>
         	<form:option value="Sunglasses"></form:option>
         	<form:option value="Shoe"></form:option>
@@ -203,67 +203,51 @@ body
         	<form:option value="Sarees"></form:option>
         	<form:option value="Dress Materials"></form:option>
         	<form:option value="Shawls"></form:option>  
-        </form:select></td>
+        </form:select>
         <%-- <td><form:input path="gender" /></td> --%>
-    </tr>
-    
-    <tr>
-        <td><form:label path="size">Size</form:label></td>
-        <td><form:select path="size">
+    <form:label path="size">Size</form:label>
+       <form:select path="size" placeholder="SIZE">
         	<form:option value="S"></form:option>
         	<form:option value="M"></form:option>
         	<form:option value="L"></form:option>
         	<form:option value="XL"></form:option>	
         	</form:select>
-        	</td>
-    </tr>
-    <tr>
-        <td><form:label path="quantity" >Quantity</form:label></td>
-        <td><form:input path="quantity" required="true"/></td>
-    </tr>
-    <tr>
-        <td><form:label path="color" >Color</form:label></td>
-        <td><form:input path="color" required="true"/></td>
-    </tr>
-    <tr>
-        <td><form:label path="item_Condition" >State</form:label></td>
-        <td><form:select path="item_Condition">
+       
+        <form:input path="quantity" required="true" placeholder="Qunatity*"/>
+    
+        <form:input path="color" required="true" placeholder="color"/>
+
+        <form:select path="item_Condition" placeholder="state">
         	<form:option value="Good"></form:option>
         	<form:option value="Excellent"></form:option>
         	<form:option value="Average"></form:option>
         	</form:select>
-        	</td>
-    </tr>
-    <tr>
-        <td><form:label path="description" >Description</form:label></td>
-        <td><form:input path="description" /></td>
-    </tr>
-      <tr>
-          <td><form:label path="gender">Gender</form:label></td>
-        <td><form:select path="gender">
+   
+        <form:input path="description" placeholder="Description" />
+    
+          <form:label path="gender">Gender</form:label>
+        <form:select path="gender">
         	<form:option value="Male"></form:option>
         	<form:option value="Female"></form:option> 
-        </form:select></td>
-        <%-- <td><form:input path="gender" /></td> --%>
-    </tr>
+        </form:select>
+       
 	
-	 <tr>
-        <td><form:label path="brand" >Brand</form:label></td>
-        <td><form:input path="brand" required="true"/></td>
-    </tr>
-
-    
+	
+        <form:label path="brand" >Brand</form:label>
+        <form:input path="brand" required="true" placeholder="Brand *"/>
     
 
     
-    <tr>
-        <td colspan="2">
+    
+
+    
+    
             <input type="submit" value="Donate"/>
             <input type ="reset" value = "Reset" />
-        </td>
-    </tr>
-</table>  
+       
+    
+ 
 </form:form>
-
+  </section>
 </body>
 </html>
