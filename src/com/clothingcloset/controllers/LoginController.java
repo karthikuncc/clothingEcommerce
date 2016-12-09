@@ -97,6 +97,5 @@ public class LoginController {
 	public String userHome(@ModelAttribute("SpringWeb") UserLogin userLogin){
 			return "donate_or_purchase";
 		
-	}
-		
+	}		
 }

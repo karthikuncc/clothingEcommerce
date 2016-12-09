@@ -2,8 +2,6 @@ package com.clothingcloset.impl;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.stereotype.Component;
 
 import com.clothingcloset.api.ItemService;

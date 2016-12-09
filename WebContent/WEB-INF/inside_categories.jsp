@@ -36,7 +36,7 @@ body
     background-image: url("http://domnod.com/img/IT_EComm.jpg");
 }
 .form-style-5{
-    max-width: 500px;
+    max-width: 1000px;
     padding: 10px 20px;
     background: #f4f7f8;
     margin: 10px auto;

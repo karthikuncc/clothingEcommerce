@@ -39,8 +39,4 @@ public class PurchasesController {
 		return new ModelAndView("show_items","command",new Item());
 	}
 	
-	
-	
-	
-	
 }
