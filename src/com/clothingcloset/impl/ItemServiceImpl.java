@@ -2,7 +2,7 @@ package com.clothingcloset.impl;
 
 import java.util.List;
 
-import javax.swing.plaf.basic.BasicComboBoxUI.ItemHandler;
+import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
@@ -14,6 +14,7 @@ import com.clothingcloset.models.Item;
 public class ItemServiceImpl implements ItemService{
 	
 	ItemServiceHandler itemServiceHandler= new ItemServiceHandler();
+
 
 	@Override
 	public List<Item> retrieveAllItemsBasedOnCategory(String categoryName) {

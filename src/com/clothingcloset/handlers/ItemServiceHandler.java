@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.clothingcloset.databaseconnections.ConnectionUtil;
@@ -40,7 +41,7 @@ public class ItemServiceHandler {
 				id = resultSet.getInt("CATEGORY_ID");
 			}
 			
-			String sql1 = "SELECT * FROM ITEM_TABLE WHERE CATEGORY_ID = "+id+";";
+			String sql1 = "SELECT * FROM ITEM_TABLE WHERE CATEGORY_ID = "+id+" AND QUANTITY> 0;";
 			System.out.println(sql1);
 			ResultSet resultSet_item = (ResultSet) stmt.executeQuery(sql1);
 			while(resultSet_item.next()){
@@ -134,5 +135,7 @@ public class ItemServiceHandler {
 
 		
 	}
+	
+	
 }
 	
